@@ -59,7 +59,7 @@ export default function PostList() {
   ];
 
   const approve = async (id) => {
-    axios.post(`http://localhost:5000/post/status/code/${id}`)
+    axios.post(`https://admin-23ei.onrender.com/post/status/code/${id}`)
         .then(loadData())
         .catch(err=>console.log(err));
 
@@ -69,14 +69,14 @@ export default function PostList() {
     const id = params.row.id;
     const image = params.row.image;   
     if(window.confirm("Are you sure that you wanted to delete that contact ?")) {
-      const res = await axios.delete(`http://localhost:5000/post/${id}`, { data: { image } });
+      const res = await axios.delete(`https://admin-23ei.onrender.com/post/${id}`, { data: { image } });
       toast.success("Post Delete Successfully!");
       setTimeout(()=>loadData(), 500);
       }
   }
 
   const loadData = async () => {
-    const response = await axios.get("http://localhost:5000/post/status/code");
+    const response = await axios.get("https://admin-23ei.onrender.com/post/status/code");
     setData(response.data);
 };
 

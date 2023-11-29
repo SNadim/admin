@@ -27,7 +27,7 @@ export default function AddPost() {
 }
 
 const loadData = async () => {
-  const response = await axios.get("http://localhost:5000/categories");
+  const response = await axios.get("https://admin-23ei.onrender.com/categories");
   setData(response.data);
 };
 
@@ -48,7 +48,7 @@ const handleSubmit = (e)=>{
       headers: { 'content-type': 'multipart/form-data' }
   }
 
-    axios.post("http://localhost:5000/post",formData, config).then(() => {
+    axios.post("https://admin-23ei.onrender.com/post",formData, config).then(() => {
       setState({title: "", desc: "", cat: ""})
   }).catch((err)=>toast.error(err.response.data));
   toast.success("Contact Added Successfully!");

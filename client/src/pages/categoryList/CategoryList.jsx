@@ -34,7 +34,7 @@ export default function CategoryList() {
 
   const deleteContact = (id) => {
     if(window.confirm("Are you sure that you wanted to delete that contact ?")) {
-      axios.delete(`http://localhost:5000/categories/${id}`);
+      axios.delete(`https://admin-23ei.onrender.com/categories/${id}`);
       toast.success("Category Delete Successfully!");
       setTimeout(()=>loadData(), 500);
 
@@ -42,7 +42,7 @@ export default function CategoryList() {
   }
 
   const loadData = async () => {
-    const response = await axios.get("http://localhost:5000/categories");
+    const response = await axios.get("https://admin-23ei.onrender.com/categories");
     setData(response.data);
 };
 

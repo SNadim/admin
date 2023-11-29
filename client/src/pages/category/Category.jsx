@@ -16,7 +16,7 @@ export default function Category() {
   const [cat, setCat] = useState("");
 
   useEffect(()=>{
-    axios.get(`http://localhost:5000/categories/${catId}`)
+    axios.get(`https://admin-23ei.onrender.com/categories/${catId}`)
     .then((res)=>setState({...res.data[0]}))
     .then(err=>console.log(err));
 }, [catId]);
@@ -27,7 +27,7 @@ const handleSubmit = (e) => {
 
   } else {
     if(catId) {
-      axios.put(`http://localhost:5000/categories/${catId}`, {
+      axios.put(`https://admin-23ei.onrender.com/categories/${catId}`, {
                     cat
                 }).then(() => {
                     setCat("");

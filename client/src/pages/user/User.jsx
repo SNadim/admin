@@ -22,7 +22,7 @@ export default function Post() {
     const history = useNavigate();
 
     useEffect(()=>{
-        axios.get(`http://localhost:5000/user/${userId}`)
+        axios.get(`https://admin-23ei.onrender.com/user/${userId}`)
         .then((res)=>setState({...res.data[0]}))
         .then(err=>console.log(err));
         console.log(userId);
@@ -41,7 +41,7 @@ export default function Post() {
         headers: { 'content-type': 'multipart/form-data' }
     }
   
-    axios.post(`http://localhost:5000/user/update/${userId}`,formData, config)
+    axios.post(`https://admin-23ei.onrender.com/user/update/${userId}`,formData, config)
     .then(()=>{toast.success("Contact Updated Successfully!");})
     .catch((err)=>toast.error(err.response.data));
     setTimeout(()=>{
@@ -56,7 +56,7 @@ export default function Post() {
           <div className="postTop">
             <div className="postInfoTop">
                     <img 
-                    src={`http://localhost/CRUD/${picture}`}
+                    src={`${picture}`}
                     alt="" 
                     className="postInfoImg" 
                     />

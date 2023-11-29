@@ -28,13 +28,13 @@ export default function Post() {
     const history = useNavigate();
 
     const loadCat = async () => {
-        await axios.get("http://localhost:5000/categories")
+        await axios.get("https://admin-23ei.onrender.com/categories")
         .then(res=>{setCats(res.data)})
         .then(err=>{console.log(err)});
     }
 
     useEffect(()=>{
-        axios.get(`http://localhost:5000/post/${postId}`)
+        axios.get(`https://admin-23ei.onrender.com/post/${postId}`)
         .then((res)=>setState({...res.data[0]}))
         .then(err=>console.log(err));
         loadCat();
@@ -54,7 +54,7 @@ export default function Post() {
         headers: { 'content-type': 'multipart/form-data' }
     }
   
-    axios.post(`http://localhost:5000/post/update/${postId}`,formData, config)
+    axios.post(`https://admin-23ei.onrender.com/post/update/${postId}`,formData, config)
     .then(()=>{toast.success("Contact Added Successfully!");})
     .catch((err)=>toast.error(err.response.data));
     setTimeout(()=>{
@@ -79,7 +79,7 @@ export default function Post() {
           <div className="postTop">
             <div className="postInfoTop">
                     <img 
-                    src={`http://localhost/CRUD/${image}`}
+                    src={`${image}`}
                     alt="" 
                     className="postInfoImg" 
                     />

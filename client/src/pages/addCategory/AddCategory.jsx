@@ -11,7 +11,7 @@ export default function AddCategory() {
   const handlerSubmit = (e) => {
     e.preventDefault();
     if(cat) {
-      axios.post("http://localhost:5000/categories", {
+      axios.post("https://admin-23ei.onrender.com/categories", {
         cat
     }).then(() => {
       setCat("")

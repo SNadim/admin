@@ -1,13 +1,13 @@
 const config = {
-    db: {
+  db: {
     host: "localhost",
-    port: '3307',
+    port: "3307",
     user: "root",
     password: "",
-    database: 'db_blog'
-    },
+    database: "db_blog",
+  },
 
-    listPerPage: 10,
+  listPerPage: 10,
 };
 
 module.exports = config;

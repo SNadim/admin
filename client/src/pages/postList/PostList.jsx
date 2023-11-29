@@ -35,7 +35,7 @@ export default function PostList() {
       renderCell:(params)=>{
         return (
           <div className='postList'>
-            <img src={`http://localhost/CRUD/${params.row.image}`} alt="" className="postListImg" />
+            <img src={`https://admin-23ei.onrender.com${params.row.image}`} alt="" className="postListImg" />
           </div>
         )
       }
@@ -59,7 +59,7 @@ export default function PostList() {
     const id = params.row.id;
     const image = params.row.image;   
     if(window.confirm("Are you sure that you wanted to delete that contact ?")) {
-      const res = await axios.delete(`http://localhost:5000/post/${id}`, { data: { image } });
+      const res = await axios.delete(`https://admin-23ei.onrender.com/post/${id}`, { data: { image } });
       toast.success("Post Delete Successfully!");
       setTimeout(()=>loadData(), 500);
 
@@ -67,7 +67,7 @@ export default function PostList() {
   }
 
   const loadData = async () => {
-    const response = await axios.get("http://localhost:5000/post");
+    const response = await axios.get("https://admin-23ei.onrender.com/post");
     setData(response.data);
 };
 
