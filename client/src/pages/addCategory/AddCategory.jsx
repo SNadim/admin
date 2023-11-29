@@ -2,7 +2,7 @@ import './addCategory.css';
 import { toast } from 'react-toastify';
 import { useState } from 'react';
 import axios from 'axios';
-import { Link, useNavigate , useParams  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddCategory() {
   const [cat, setCat] = useState("");

@@ -1,6 +1,6 @@
 import './topBar.css';
 import logo from './icon.png'
-import { LineStyle, TagFaces,  CopyrightRounded } from '@material-ui/icons';
+import { LineStyle } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 
 export default function TopBar() {

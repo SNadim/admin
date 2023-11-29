@@ -59,7 +59,7 @@ export default function PostList() {
     const id = params.row.id;
     const image = params.row.image;   
     if(window.confirm("Are you sure that you wanted to delete that contact ?")) {
-      const res = await axios.delete(`https://admin-23ei.onrender.com/user/${id}`, { data: { image } });
+      await axios.delete(`https://admin-23ei.onrender.com/user/${id}`, { data: { image } });
       toast.success("Post Delete Successfully!");
       setTimeout(()=>loadData(), 500);
 

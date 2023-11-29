@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-const qs = require('qs');
+
 
 
 const initialState = {
@@ -26,7 +26,7 @@ export default function Post() {
     const [cats, setCats] = useState([]);
     const { postId } = useParams();
     const history = useNavigate();
-
+    console.log(cat_id);
     const loadCat = async () => {
         await axios.get("https://admin-23ei.onrender.com/categories")
         .then(res=>{setCats(res.data)})

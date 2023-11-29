@@ -1,5 +1,5 @@
 import './category.css';
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
@@ -14,6 +14,7 @@ export default function Category() {
   const [state, setState] = useState(initialState);
   const {id, name } = state;
   const [cat, setCat] = useState("");
+
 
   useEffect(()=>{
     axios.get(`https://admin-23ei.onrender.com/categories/${catId}`)
@@ -35,7 +36,7 @@ const handleSubmit = (e) => {
                 }).catch((err)=>console.log(err));
 
     } else {
-
+      console.log(id);
     }
   }
 }
